@@ -1,5 +1,5 @@
 const express=require('express');
-
+const path=require('path')
 const app=express();
 const PORT = process.env.PORT || 4000;
 app.use(express.json())
@@ -23,5 +23,8 @@ app.post("/post", (req, res) => {
 app.get("/api",(req,res)=>{
     res.json(mytodo)
 })
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+  })
 
 app.listen(PORT,()=>console.log("server is running"))
