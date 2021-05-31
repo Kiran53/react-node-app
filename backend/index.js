@@ -15,7 +15,7 @@ const mytodo = [{
      srno: 2
  }
  ]
-
+app.use(express.static(path.join(__dirname, '../build')));
 app.post("/post", (req, res) => {
     console.log("Connected to React");
     res.send("connected")
