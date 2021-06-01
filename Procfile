@@ -1,1 +1,1 @@
-web: node ./backend/app.js
+web: sh  -c 'cd ./backend/app.js && npm start'
